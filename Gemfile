@@ -34,8 +34,9 @@ gem 'rails-html-sanitizer', '~> 1.0'
 gem "dotenv-rails"
 
 # Flexible authentication library
-gem "devise"
+gem 'devise', git: 'https://github.com/plataformatec/devise.git', :branch => 'lm-rails-4-2'
 
+gem 'omniauth'
 
 # Use Unicorn as the app server
 gem 'unicorn'
