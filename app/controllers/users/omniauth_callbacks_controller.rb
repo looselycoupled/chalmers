@@ -1,6 +1,6 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
-  def github
+  def all
     auth = request.env['omniauth.auth']
     @identity = Identity.find_with_omniauth(auth)
 
@@ -23,6 +23,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     end
   end
+
+  alias_method :github, :all
 
 end
 

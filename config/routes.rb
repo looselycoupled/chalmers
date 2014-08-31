@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   }
 
   devise_scope :user do
+    get "/sign_out" => "devise/sessions#destroy"
+
     authenticated :user do
       root :to => 'pages#dashboard'
     end
@@ -12,5 +14,6 @@ Rails.application.routes.draw do
       root 'devise/sessions#new', as: :unauthenticated_root
     end
   end
+
 
 end
