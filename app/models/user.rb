@@ -1,7 +1,14 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable, :registerable,
-  # :recoverable
-  devise :database_authenticatable, :omniauthable, :lockable,
+  # :recoverable, :database_authenticatable,
+  devise :omniauthable, :lockable,
          :rememberable, :trackable, :validatable
+
+  has_many :identities
+
+  def self.create_with_omniauth(info)
+    create(name: info['name'])
+  end
+
 end

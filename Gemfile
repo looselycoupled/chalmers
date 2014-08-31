@@ -37,6 +37,8 @@ gem "dotenv-rails"
 gem 'devise', git: 'https://github.com/plataformatec/devise.git', :branch => 'lm-rails-4-2'
 
 gem 'omniauth'
+# gem 'omniauth-google_oauth2'
+gem 'omniauth-github'
 
 # Use Unicorn as the app server
 gem 'unicorn'
