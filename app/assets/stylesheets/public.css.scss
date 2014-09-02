@@ -1,0 +1,18 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+@import "bootstrap-social/bootstrap-social";
+
+div.login {
+  width:200px;
+  height:45px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -100px;
+
+  img {
+    width: 100%;
+  }
+}

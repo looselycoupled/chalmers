@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   }
 
   devise_scope :user do
-    get "/sign_out" => "devise/sessions#destroy"
+    get "/sign_out" => "devise/sessions#destroy", as: 'sign_out'
 
     authenticated :user do
       root :to => 'pages#dashboard'
