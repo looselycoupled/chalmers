@@ -11,4 +11,9 @@ class User < ActiveRecord::Base
     create(name: info['name'])
   end
 
+
+  def password
+  	Devise.friendly_token[0,20]
+  end
+
 end

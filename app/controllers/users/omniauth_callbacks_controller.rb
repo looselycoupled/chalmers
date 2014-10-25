@@ -15,10 +15,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         # create a brand new identity for the user
         @user.identities << Identity.create_with_omniauth(auth)
         @user.save
-        redirect_to root_url, notice: "New identity added"
+        # redirect_to root_url, notice: "New identity added"
+        sign_in_and_redirect @user, :event => :authentication
       else
         # users arent allowed to register themselves to redirect to login
-        redirect_to new_user_session, notice: "User not allowed"
+        redirect_to root_url, notice: "User not allowed"
       end
 
     end
