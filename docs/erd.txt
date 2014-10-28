@@ -1,0 +1,76 @@
+Projects
+========
+name
+description
+queue (boolean)
+
+Queues
+======
+id
+project_id
+name
+url
+
+
+
+Features (puppet modules / classes)
+=======
+id
+name
+puppet_include
+
+
+Strategies (scaling strategy for an asset)
+==========
+id
+type (one, scaling)
+scaling_factor (number, queue_speed, queue size)
+number_of_servers
+queue_speed
+queue_size
+
+
+
+Assets (worker types for a project)
+======
+id
+project_id
+strategy_id
+
+
+Assignments (functionality list for an asset)
+===========
+id
+asset_id
+feature_id
+
+
+Servers (actual ec2 servers)
+=======
+id
+asset_id
+ami
+instance_id
+public_ip 
+hostname
+region
+ready (boolean)
+
+
+
+
+
+
+
+
+
+Settings
+========
+id
+friendly_name
+machine_name
+value
+type [boolean, string, text]
+
+
+Strategy
