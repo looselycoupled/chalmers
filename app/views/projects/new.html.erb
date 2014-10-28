@@ -1,0 +1,13 @@
+<h1>New Project</h1>
+
+<p>...</p>
+
+
+<%= bootstrap_form_for(@project) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_area :description %>
+  <%= f.check_box :queue, label: 'Create a Queue' %>
+
+  <%= f.submit "Save", class: "btn btn-primary", role: "btn" %>
+  <%= f.button "Cancel", class: "btn btn-default", role: "btn", 'data-url' => projects_path %>
+<% end %>

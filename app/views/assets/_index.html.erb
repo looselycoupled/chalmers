@@ -1,0 +1,23 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Scaling</th>
+      <th>Number of Servers</th>
+      <th>Features</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% collection.each do |a| %>
+    <tr>
+      <td><%= a.project.name %></td>
+      <td><%= a.strategy.code %></td>
+      <td><%= a.strategy.number_of_servers %></td>
+      <td><%= a.features.map{ |f| f.name}.join(', ') %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<a href="#" class="btn btn-primary" role="button">New Asset</a>

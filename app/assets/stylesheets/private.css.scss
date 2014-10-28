@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "rails_bootstrap_forms";
+@import "private/*";
 
 body {
   color: #525252;
@@ -81,9 +83,11 @@ a.show-sidebar:hover {
 #content {
   position: relative;
   z-index: 10;
-  background: #ebebeb;
+  background: #fff;
+  // background: #ebebeb;
   box-shadow: 0 0 6px #131313;
   padding-bottom: 3000px !important;
+  padding-top: 20px;
   margin-bottom: -2980px !important;
   overflow: hidden;
   -webkit-transition: 0.2s;
@@ -1049,7 +1053,7 @@ td.beauty-hover {
 }
 .checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio] {
   position: absolute;
-  clip: rect(0, 0, 0, 0);
+  // clip: rect(0, 0, 0, 0);
 }
 .checkbox i, .checkbox-inline i, .radio i, .radio-inline i {
   cursor: pointer;

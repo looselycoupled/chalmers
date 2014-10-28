@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :projects do
+    resources :assets, only: [:index, :new, :create]
+  end
+
+  resources :assets, only: [:show, :edit, :update, :destroy]
+
   devise_for :users, :skip => [:registrations], :controllers => {
     :omniauth_callbacks => "users/omniauth_callbacks"
   }

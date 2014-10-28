@@ -15,6 +15,14 @@
 
 $(document).ready(function () {
 
+  // linkify all buttons with data-url
+  $( "button[data-url]" ).on( "click", function(evt) {
+    evt.preventDefault();
+    console.log($( this ).attr('data-url'));
+    window.location = $( this ).attr('data-url');
+  });
+
+
 });
 
 

@@ -1,0 +1,27 @@
+
+<h1><%= @project.name %></h1>
+
+<p><%= @project.description %>&nbsp;</p>
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><%= link_to "Details", '#details', role: 'tab', 'data-toggle' => 'tab' %></li>
+  <li><%= link_to "Assets", '#assets', role: 'tab', 'data-toggle' => 'tab' %></li>
+  <li><%= link_to "Reports", '#reports', role: 'tab', 'data-toggle' => 'tab' %></li>
+</ul>
+
+
+<div class="tab-content" style="padding-top: 20px;">
+
+  <div class="tab-pane active" id="details">
+  	<%= render partial: "project", locals: { p: @project } %>
+  </div>
+
+  <div class="tab-pane" id="assets">
+	<%= render partial: "assets/index", locals: { collection: @project.assets } %>
+  </div>
+
+  <div class="tab-pane" id="reports">
+  	Not Implemented...
+  </div>
+
+</div>

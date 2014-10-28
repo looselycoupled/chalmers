@@ -5,5 +5,7 @@ class Asset < ActiveRecord::Base
 
   has_many :servers
   has_many :assignments
+  has_many :features, through: :assignments
+
 
 end
