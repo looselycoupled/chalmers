@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>Chalmers</title>
-  <%= stylesheet_link_tag    'private', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'private', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
@@ -21,6 +21,7 @@
     <div id="content" class="col-xs-12 col-sm-10">
       <%= yield %>
     </div>
+
   </div>
 </div>
 
