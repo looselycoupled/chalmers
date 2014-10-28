@@ -11,10 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140831012204) do
+ActiveRecord::Schema.define(version: 20141025175235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "assets", force: true do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "project_id"
+    t.integer  "strategy_id"
+  end
+
+  add_index "assets", ["project_id"], name: "index_assets_on_project_id", using: :btree
+  add_index "assets", ["strategy_id"], name: "index_assets_on_strategy_id", using: :btree
+
+  create_table "assignments", force: true do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "asset_id"
+    t.integer  "feature_id"
+  end
+
+  add_index "assignments", ["asset_id"], name: "index_assignments_on_asset_id", using: :btree
+  add_index "assignments", ["feature_id"], name: "index_assignments_on_feature_id", using: :btree
+
+  create_table "features", force: true do |t|
+    t.string   "name"
+    t.string   "puppet_include"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "identities", force: true do |t|
     t.string   "uid"
@@ -28,6 +55,38 @@ ActiveRecord::Schema.define(version: 20140831012204) do
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
+
+  create_table "projects", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "queue"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "servers", force: true do |t|
+    t.string   "ami"
+    t.string   "instance_id"
+    t.string   "hostname"
+    t.string   "public_ip_address"
+    t.string   "private_ip_address"
+    t.string   "private_dns_name"
+    t.string   "region"
+    t.string   "size"
+    t.boolean  "ready"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "asset_id"
+  end
+
+  add_index "servers", ["asset_id"], name: "index_servers_on_asset_id", using: :btree
+
+  create_table "strategies", force: true do |t|
+    t.string   "code"
+    t.integer  "number_of_servers"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
   create_table "users", force: true do |t|
     t.string   "name",                                null: false
