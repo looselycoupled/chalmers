@@ -5,6 +5,7 @@ class InitialModels < ActiveRecord::Migration
       t.string :name
       t.string :description
       t.string :queue
+      t.string :state
       t.timestamps null: false
     end
 
