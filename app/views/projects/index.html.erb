@@ -9,7 +9,8 @@
       <th>Assets</th>
       <th>Servers</th>
       <th>Queue Length</th>
-      <th>Active</th>
+      <th>Status</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -19,7 +20,8 @@
       <td><%= p.assets.length %></td>
       <td><%= p.servers.length %></td>
       <td>Not Implemented</td>
-      <td>Not Implemented</td>
+      <td><%= p.state %></td>
+      <td><%= display_action(p) %></td>
     </tr>
     <% end %>
   </tbody>

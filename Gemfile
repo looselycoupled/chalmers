@@ -7,7 +7,7 @@ gem 'rails', '4.2.0.beta2'                  # Bundle edge Rails instead: gem 'ra
 gem 'pg'                                    # Use postgresql as the database for Active Record
 gem "dotenv-rails"                          # Slurp in the .env file even during rake tasks
 gem 'unicorn'                               # Use Unicorn as the app server
-
+gem 'aasm'
 
 # ASSET PIPELINE
 gem 'sass-rails', '~> 5.0.0.beta1'          # Use SCSS for stylesheets

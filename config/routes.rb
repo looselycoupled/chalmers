@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     resources :assets, only: [:index, :new, :create]
   end
 
+  get "/projects/:id/provision", to: 'projects#provision', as: 'provision_project'
+
+  get "/projects/:id/dismantle", to: 'projects#dismantle', as: 'dismantle_project'
+
   resources :assets, only: [:show, :edit, :update, :destroy]
 
   devise_for :users, :skip => [:registrations], :controllers => {
