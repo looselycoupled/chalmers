@@ -1,0 +1,15 @@
+<h1>New Feature</h1>
+
+<br>
+
+<div>
+  <%= bootstrap_form_for(@feature) do |f| %>
+
+    <%= f.text_field :name %>
+    <%= f.text_area :puppet_include %>
+
+    <%= f.submit "Save", class: "btn btn-primary", role: "btn" %>
+    <%= f.button "Cancel", class: "btn btn-default", role: "btn", 'data-url' => features_path %>
+
+  <% end %>
+</div>

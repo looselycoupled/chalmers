@@ -19,6 +19,15 @@
     <%= render 'layouts/sidebar' %>
 
     <div id="content" class="col-xs-12 col-sm-10">
+
+      <% if !flash.empty? %>
+        <div class="alerts">
+        <% flash.each do |name, msg| -%>
+          <%= content_tag :div, msg, class: 'alert alert-danger alert-dismissible', role: 'alert' %>
+        <% end -%>
+        </div>
+      <% end -%>
+
       <%= yield %>
     </div>
 

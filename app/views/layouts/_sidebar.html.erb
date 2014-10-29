@@ -8,7 +8,7 @@
           </a>
         </li>
         <li>
-          <a href="/projects" class="active">
+          <a href="/projects" class="<%= "active" if params[:controller] == "projects" %>">
             <i class="fa"></i>
             <span class="hidden-xs">Projects</span>
           </a>
@@ -17,6 +17,13 @@
               <li><a href="#">First level menu</a></li>
             </ul>
           <% end %>-->
+        </li>
+
+        <li>
+          <a href="/features" class="<%= "active" if params[:controller] == "features" %>">
+            <i class="fa"></i>
+            <span class="hidden-xs">Features</span>
+          </a>
         </li>
 
 

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+
+  resources :features
+
   resources :projects do
     resources :assets, only: [:index, :new, :create]
   end
